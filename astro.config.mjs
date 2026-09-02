@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 import rehypeWrapTables from './src/plugins/rehype-wrap-tables';
 
 export default defineConfig({
-	site: 'https://simple.com',
+	site: 'https://linuzz-zen.netlify.app/',
 	vite: {},
 	integrations: [
 		expressiveCode({
@@ -45,6 +45,18 @@ export default defineConfig({
 		syntaxHighlight: false,
 	},
 	fonts: [
+		{
+			provider: fontProviders.local(),
+			name: 'OpenDyslexic',
+			cssVariable: '--font-opendyslexic',
+			fallbacks: ['sans-serif'],
+			options: {
+				variants: [
+					{ src: ['./src/assets/fonts/OpenDyslexicMNerdFont-Regular.otf'], weight: 400, style: 'normal', display: 'swap' },
+					{ src: ['./src/assets/fonts/OpenDyslexicNerdFont-Bold.otf'], weight: 700, style: 'normal', display: 'swap' },
+				],
+			},
+		},
 		{
 			provider: fontProviders.local(),
 			name: 'Atkinson',
