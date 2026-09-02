@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE, AUTHOR_NAME, AUTHOR_TITLE, AUTHOR_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, AUTHOR_NAME, AUTHOR_TITLE, AUTHOR_DESCRIPTION, AUTHOR_DESCRIPTION2 } from '../consts';
 
 const allPosts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -51,8 +51,8 @@ const formatDate = (date: Date) => {
 				border-radius: 50%;
 				object-fit: cover;
 				border: 3px solid transparent;
-				background: linear-gradient(135deg, var(--accent), #8b5cf6) padding-box,
-							linear-gradient(135deg, var(--accent), #8b5cf6) border-box;
+				background: linear-gradient(135deg, var(--accent), #f6ae5c) padding-box,
+							linear-gradient(135deg, var(--accent), #f6d25c) border-box;
 				box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2);
 			}
 
@@ -250,6 +250,7 @@ const formatDate = (date: Date) => {
 					<h1 class="intro-title">Hello, I'm {AUTHOR_NAME}</h1>
 					<p class="intro-subtitle">{AUTHOR_TITLE}</p>
 					<p class="intro-description">{AUTHOR_DESCRIPTION}</p>
+					<p class="intro-description">{AUTHOR_DESCRIPTION2}</p>
 				</div>
 			</section>
 

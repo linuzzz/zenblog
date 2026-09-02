@@ -64,7 +64,7 @@ const { title, description, pubDate, updatedDate, headings, tags } = Astro.props
 
       /* ── Layout ── */
       .page-container {
-        max-width: 700px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 3rem 1.25rem 5rem;
         position: relative;
@@ -439,22 +439,6 @@ const { title, description, pubDate, updatedDate, headings, tags } = Astro.props
       .prose tbody tr:last-child td { border-bottom: none; }
       .prose tbody tr:hover td { background-color: var(--bg-secondary); }
 
-      /* ── Sidebar TOC ── */
-      .sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        position: fixed;
-        left: calc(50% + 370px);
-        top: 6.5rem;
-        bottom: 10rem;
-        width: 220px;
-      }
-
-      @media (max-width: 1200px) {
-        .sidebar { display: none; }
-      }
-
       .toc {
         background-color: var(--bg-secondary);
         border: 1px solid var(--border-color);
@@ -682,26 +666,6 @@ const { title, description, pubDate, updatedDate, headings, tags } = Astro.props
         </article>
       </main>
 
-      {headings && headings.length > 0 && (
-        <aside class="sidebar">
-          <div class="toc">
-            <div class="toc-title">On This Page</div>
-            <nav id="toc-nav">
-              {headings.filter(h => h.depth <= 3).map((h) => (
-                <a href={`#${h.slug}`}
-                  data-toc-link
-                  data-depth={h.depth}>
-                  {h.text}
-                </a>
-              ))}
-            </nav>
-          </div>
-          <button id="back-to-top" title="Back to top" aria-label="Back to top">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-            <span>Back to top</span>
-          </button>
-        </aside>
-      )}
     </div>
 
     <Footer />
