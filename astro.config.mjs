@@ -47,13 +47,13 @@ export default defineConfig({
 	fonts: [
 		{
 			provider: fontProviders.local(),
-			name: 'OpenDyslexic',
+			name: 'OpenDyslexic Nerd Font',
 			cssVariable: '--font-opendyslexic',
 			fallbacks: ['sans-serif'],
 			options: {
 				variants: [
-					{ src: ['./src/assets/fonts/OpenDyslexicMNerdFont-Regular.otf'], weight: 400, style: 'normal', display: 'swap' },
-					{ src: ['./src/assets/fonts/OpenDyslexicNerdFont-Bold.otf'], weight: 700, style: 'normal', display: 'swap' },
+					{ src: ['./src/assets/fonts/OpenDyslexicNerdFont-Regular.otf'], weight: 400, style: 'normal', display: 'swap' },
+					{ src: ['./src/assets/fonts/OpenDyslexicNerdFont-Bold.otf'], weight: 700, style: 'bold', display: 'swap' },
 				],
 			},
 		},
