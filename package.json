@@ -9,9 +9,11 @@
     "dev": "astro dev",
     "build": "astro build && pagefind --site dist --output-path dist/pagefind --force-language zh-cn",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.2.6",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
@@ -38,5 +40,11 @@
     "sharp": "^0.34.3",
     "shiki": "^4.2.0",
     "unist-util-visit": "^5.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.128.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
