@@ -12,8 +12,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   server: {
 	    host: '127.0.0.1',
-    	port: 4321,
-      allowedHosts: ['f44vm.tail71780c.ts.net']
+    	port: 4321
 	  },
 
   site: 'https://linuzz-zen.netlify.app/',
@@ -72,5 +71,10 @@ export default defineConfig({
       },
 	],
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true, // Enables local Cloudflare runtime emulation
+    },
+    imageService: "compile", // Uses sharp at build time
+  }),
 });
